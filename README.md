@@ -1,56 +1,56 @@
-# Opencart Mesafeli Satış Sözleşmesi
+# Opencart Distance Sales Contract
 
-Opencart V2.x.x, V3.x.x, Journal 2, Foster teması ve Quick Checkout ile uyumlu mesafeli satış sözleşmesi.
+Distance sales contract compatible with Opencart V2.x.x, V3.x.x, Journal 2, Foster theme and Quick Checkout.
 
-Destek için lütfen issues oluşturun.
+Please create issues for support.
 
-Tüketici kanunu gereği "Mesafeli Satış Sözleşmesinin" online satış yapılan sitelerde bulunması yasal zorunluluktur.
+According to the consumer law, it is a legal obligation to have the "Distance Sales Contract" on online sales sites.
 
-## Özelikleri:
-- [x] Opencart V2.x.x, V3.x.x sürümleri ile uyumludur.
-- [x] Journal 2 ve Foster teması ile uyumludur.
-- [x] Quick Checkout ile uyumludur.
-- [x] Lexus Ceramic, Lexus Nomi ve Raven temaları ile uyumludur.
-- [x] Her siparişe dinamik olarak oluşturulur. Sözleşmede alıcının adı soyadı, adresi, teslimat adresi, sipariş ettiği ürünler ve satıcının bilgileri yer alır.
-- [x] Kupon indirimlerini ve kargo ücretlerini sözleşmeler içinde gösterir.
-- [x] Diğer modüller tarafından toplamlara eklenen tüm ücretler aynı şekilde gösterilir.
-- [ ] Sözleşmeler yönetici panelinden değiştirilebilir. (Değiştirildiğinde eski siparişlere ait sözleşmeler değişmez)
-- [ ] Sipariş tamamlandıktan sonra sözleşmeler PDF olarak alıcıya e-posta'da ek olarak yollanır. (İsteğe bağlı olarak panelden değiştirilebilir)
-- [ ] Sözleşme ve ön bilgilendirme formu veritabanına kaydedilmektedir. Alıcı istediği zaman o siparişe ait sözleşmeleri görüntüleyebilir ya da PDF olarak indirebilir.
-- [ ] Yönetici panelinde o siparişe ait sözleşme ve ön bilgilendirme formu görüntülenebilir ya da PDF olarak indirilebilir.
-- [ ] Modal (Pop-up) ya da sayfa içinde gösterim opsiyonu vardır.
+## Features:
+- [x] Opencart V2.x.x is compatible with V3.x.x versions.
+- [x] Compatible with Journal 2 and Foster theme.
+- [x] Compatible with Quick Checkout.
+- [x] Compatible with Lexus Ceramic, Lexus Nomi and Raven themes.
+- [x] Dynamically created for each order. The contract includes the name, surname, address, delivery address, the products ordered and the seller's information.
+- [x] Displays coupon discounts and shipping costs in contracts.
+- [x] All fees added to totals by other modules are shown in the same way.
+- [] Agreements can be changed from admin panel. (When changed, contracts belonging to old orders do not change)
+- [] After the order is completed, the contracts are sent to the buyer in PDF as an attachment to the e-mail. (Can be changed optionally from the panel)
+- [] Contract and preliminary information form are saved in the database. The buyer can view the contracts for that order at any time or download them as PDF.
+- [] Contract and preliminary information form for that order can be viewed in the admin panel or downloaded as PDF.
+- [] Modal (Pop-up) or in-page display option.
 
-## Kurulumu
-- Repository indirdikten sonra **catalog/view/theme/default** klasörünü içindeki **default** klasörün adını kendi tema adınız ile değiştirin.
-- Daha sonra **catalog** klasörünü sitenizin kök dizinine yükleyiniz.
-- Web sayfanızda *catalog/controller/extension/quickcheckout/terms.php* dosyasını açın. Aşağıdaki kodu bulun.
+## Installation
+- After downloading the repository, replace the ** default ** folder name in the ** catalog / view / theme / default ** folder with your own theme name.
+- Then upload the ** catalog ** folder to your site's root directory.
+- Open * catalog / controller / extension / quickcheckout / terms.php * on your web page. Find the code below.
 
-```
-	if ($information_info) {
-		$data['text_agree'] = sprintf($this->language >get('text_agree'), $this->url->link('information/information/agree', 'information_id=' . $this->config->get('config_checkout_id'), true), $information_info['title'], $information_info['title']);
-	} else {
-				$data['text_agree'] = '';
-			}
-	} else {
-			$data['text_agree'] = '';
-	}
-```
+``
+if ($ information_info) (
+$ data ['text_agree'] = sprintf ($ this-> language> get ('text_agree'), $ this-> url-> link ('information / information / agree', 'information_id ='. $ this-> config -> get ('config_checkout_id'), true), $ information_info ['title'], $ information_info ('title']);
+} else {
+$ data ['text_agree'] = '';
+}
+} else {
+$ data ['text_agree'] = '';
+}
+``
 
-- Aşağıdaki gibi değiştirin.
+- Replace as below.
 
-```
-	if ($information_info) {
-		$data['text_agree'] = sprintf($this->language->get('text_agree'), $this->url->link('checkout/sozlesme', 'information_id=' . $this->config->get('config_checkout_id'), true), 'Mesafeli Satış Sözleşmesi', 'Mesafeli Satış Sözleşmesi');
-	} else {
-				$data['text_agree'] = '';
-			}
-	} else {
-			$data['text_agree'] = '';
-	}
-```
+``
+if ($ information_info) (
+$ data ['text_agree'] = sprintf ($ this-> language-> get ('text_agree'), $ this-> url-> link ('checkout / contract', 'information_id ='. $ this-> config- > get ('config_checkout_id'), true), 'Distance Selling Agreement', 'Distance Selling Agreement');
+} else {
+$ data ['text_agree'] = '';
+}
+} else {
+$ data ['text_agree'] = '';
+}
+``
 
-## Eklentiyi Kullanan E-ticaret Siteleri
-İkinci el kitap satışı yapan [Sosyal Shaf](https://www.sosyalsahaf.com/)
+## E-commerce Sites Using the Plugin
+Second hand book seller [Sosyal Shaf] (https://www.sosyalsahaf.com/)
 
-## Hakkımda
-[Twitter](https://twitter.com/kamilklkn) | [Instagram](http://instagram.com/kamilklkn) | [Linkedin](http://tr.linkedin.com/in/kamilklkn/) | [500px](https://500px.com/kamilklkn) | [Vsco](https://vsco.co/kamilklkn/) | [Web Page](http://www.kamilklkn.com/)
+## About me
+[Twitter] (https://twitter.com/kamilklkn) | [Instagram] (http://instagram.com/kamilklkn) | [Linkedin] (http://tr.linkedin.com/in/kamilklkn/) | [500px] (https://500px.com/kamilklkn) | [Vsco] (https://vsco.co/kamilklkn/) | [Web Page] (http://www.kamilklkn.com/) 
